@@ -15,11 +15,6 @@ __meta__ = {
 "_edit_vertical_guides_": [ 5840.0 ]
 }
 
-[node name="UserInterface" type="CanvasLayer" parent="."]
-layer = 50
-
-[node name="UserInterface" parent="UserInterface" instance=ExtResource( 8 )]
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1
 
@@ -28,9 +23,15 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 rect_pivot_offset = Vector2( 3080, 458 )
 texture = ExtResource( 4 )
+expand = true
 __meta__ = {
 "_edit_use_anchors_": true
 }
+
+[node name="UserInterface" type="CanvasLayer" parent="."]
+layer = 50
+
+[node name="UserInterface" parent="UserInterface" instance=ExtResource( 8 )]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 2 )
@@ -45,6 +46,7 @@ stomp_impulse = 1600.0
 
 [node name="Camera2D" parent="Player" index="2"]
 position = Vector2( -1, -190 )
+limit_top = -1000000
 limit_right = 5840
 
 [node name="Enemies" type="Node" parent="."]
